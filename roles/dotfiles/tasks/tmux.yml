@@ -1,0 +1,5 @@
+- name: create symlink for .tmux.conf
+  file:     
+    src: "{{ dotfiles_path }}/.tmux.conf"
+    dest: /home/{{ user }}/.tmux.conf
+    state: link

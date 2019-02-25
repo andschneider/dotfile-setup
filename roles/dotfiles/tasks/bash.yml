@@ -1,0 +1,8 @@
+- name: create symlink for .bash_aliases
+  file:     
+    src: "{{ dotfiles_path }}/.bash_aliases"
+    dest: /home/{{ user }}/.bash_aliases
+    state: link
+
+- name: reload .bash_aliases
+  shell: . /home/{{ user }}/.bash_aliases

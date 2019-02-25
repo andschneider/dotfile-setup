@@ -1,0 +1,5 @@
+- name: create symlink for .vimrc
+  file:     
+    src: "{{ dotfiles_path }}/.vimrc"
+    dest: /home/{{ user }}/.vimrc
+    state: link

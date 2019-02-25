@@ -1,0 +1,5 @@
+- name: create symlink for .gitconfig
+  file:     
+    src: "{{ dotfiles_path }}/.gitconfig"
+    dest: /home/{{ user }}/.gitconfig
+    state: link
