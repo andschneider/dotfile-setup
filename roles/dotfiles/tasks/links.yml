@@ -1,5 +1,11 @@
+- name: check if Github folder is already at ~/Github
+  stat:
+    path: ~/Github
+  register: github_exists
+
 - name: create symlink for Github folder
   file:     
     src: "{{ github_path }}"
     dest: ~/Github
     state: link
+  when: github_exists.stat.exists == False

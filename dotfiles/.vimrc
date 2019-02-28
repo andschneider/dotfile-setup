@@ -66,6 +66,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 Plugin 'valloric/youcompleteme'
 Plugin 'w0rp/ale'
 set laststatus=2    " needed for lightline
