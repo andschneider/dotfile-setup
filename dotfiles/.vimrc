@@ -7,11 +7,6 @@ set backspace=indent,eol,start
 " Wrap long lines
 map Q gq
 
-" Tabs and spaces
-set tabstop=4           " visual spaces per TAB
-set softtabstop=4       " number of spaces when tab is hit
-set expandtab           " tabs are spaces
-
 " Color Themes
 colorscheme gruvbox
 set background=dark
@@ -54,6 +49,7 @@ set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
+" PLUGINS
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -72,7 +68,9 @@ Plugin 'w0rp/ale'
 set laststatus=2    " needed for lightline
 
 call vundle#end()
+
 filetype plugin indent on
+
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',
       \ 'active': {

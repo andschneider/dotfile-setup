@@ -3,3 +3,17 @@
     src: "{{ dotfiles_path }}/.vimrc"
     dest: /home/{{ user }}/.vimrc
     state: link
+
+- name: create folder for language specific formatting files
+  file:
+    path: /home/{{ user }}/.vim/ftplugin
+    state: directory
+
+- name: create symlink for language specific formatting files
+  file: 
+    src: "{{ dotfiles_path }}/{{ item }}"
+    dest: /home/{{ user }}/.vim/ftplugin/{{ item }}
+    state: link
+  with_items:
+    - c.vim
+    - python.vim
