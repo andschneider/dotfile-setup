@@ -17,3 +17,6 @@ alias ....='cd ../../..'
 alias lsl='ls -l'
 alias lsla='ls -la'
 
+# kubernetes
+alias kcl='kubectl'
+alias kg='kubectl get'
