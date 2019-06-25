@@ -2,7 +2,7 @@
 alias venv='python3 -m venv venv && source venv/bin/activate && pip install --upgrade pip setuptools -q'
 alias ae='source venv/bin/activate'
 alias de='deactivate'
-alias python3='/usr/bin/python3.7'
+alias python3='python3.7'
 
 # git
 alias cdg='cd ~/Github'
