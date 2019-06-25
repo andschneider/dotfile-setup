@@ -1,0 +1,8 @@
+- name: create symlink for .zsh_aliases
+  file:     
+    src: "{{ dotfiles_path }}/.bash_aliases"
+    dest: "{{ install_path }}/.oh-my-zsh/custom/zsh_aliases.zsh"
+    state: link
+
+- name: reload .zshrc
+  shell: . "{{ install_path }}/.zshrc"

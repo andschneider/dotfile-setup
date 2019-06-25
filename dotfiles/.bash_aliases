@@ -3,6 +3,7 @@ alias venv='python3 -m venv venv && source venv/bin/activate && pip install --up
 alias ae='source venv/bin/activate'
 alias de='deactivate'
 alias python3='python3.7'
+alias python='python3'
 
 # git
 alias cdg='cd ~/Github'
@@ -30,3 +31,6 @@ alias la='ls -la'
 # kubernetes
 alias kcl='kubectl'
 alias kg='kubectl get'
+
+# docker
+alias dc='docker-compose'
