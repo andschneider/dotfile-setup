@@ -1,14 +1,6 @@
-# workstation set up with ansible
+# dotfiles w/ ansible
 
-## there are three main sections
-
-- __clis__ - command line applications such as *aws* and *gcloud*    
-- __dotfiles__ - configuration files such as *.vimrc* and *.bash_aliases*    
-- __programs__ - general programs such as *vim*   
-
-## usage
-
-### dotfiles
+## local setup
 
 Create a local.yml file under the host_vars directory:
 
@@ -29,3 +21,7 @@ To run:
 ```bash
 ansible-playbook -i ./hosts install_dotfiles.yml
 ```
+
+## remote setup
+
+WIP

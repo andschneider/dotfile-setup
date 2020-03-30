@@ -12,6 +12,7 @@ colorscheme gruvbox
 set background=dark
 
 " Editor niceness
+set spell               " turn on spell check
 set number              " turn on line numbers
 set ruler               " show the cursor position all the time
 set showcmd             " display incomplete commands
@@ -36,7 +37,6 @@ nnoremap <leader><space> :nohlsearch<CR>
 " Create a mapping to help run Python scripts.
 map <F5> :w<CR>:!python3 %<CR>
 " could also do :w <bar> :!python3 %
-
 map <F6> :!clear<CR><CR>
 
 " Save 200 lines of command history.
@@ -56,36 +56,16 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'itchyny/lightline.vim'
-Plugin 'itchyny/vim-gitbranch'
-Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'valloric/youcompleteme'
 Plugin 'w0rp/ale'
-set laststatus=2    " needed for lightline
 
 call vundle#end()
 
 filetype plugin indent on
 
-let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
-
-
-map <silent> <C-t> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
 map <silent> <C-g> :GitGutterToggle<CR>
 nmap <silent> [W <Plug>(ale_first)
 nmap <silent> [w <Plug>(ale_previous)
