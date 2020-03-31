@@ -1,0 +1,16 @@
+---
+- hosts: remote
+  user: andrew
+
+  vars_files:
+    - config.yml
+
+  roles:
+    - role: geerlingguy.dotfiles
+      when: configure_dotfiles
+
+  tasks:
+    - include_tasks: tasks/vim.yml
+      when: configure_vim
+    - include_tasks: tasks/zsh.yml
+      when: configure_zsh

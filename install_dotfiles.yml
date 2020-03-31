@@ -1,4 +1,0 @@
-- name: copy over dotfiles
-  hosts: workstation
-  roles: 
-    - dotfiles

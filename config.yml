@@ -1,0 +1,16 @@
+---
+# ubuntu or mac
+platform: ubuntu
+
+configure_dotfiles: yes
+configure_vim: yes
+configure_zsh: yes
+
+dotfiles_repo: https://github.com/andschneider/dotfiles.git
+dotfiles_repo_local_destination: ~/Github/dotfiles
+dotfiles_files:
+  - .aliases
+  - .gitconfig
+  - .tmux.conf
+  - .vimrc
+  - .zsh_config

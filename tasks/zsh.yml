@@ -1,0 +1,32 @@
+- name: Install zsh in Ubuntu.
+  when: platform == "ubuntu"
+  become: yes
+  apt:
+    name: zsh
+    state: present
+
+# TODO add install for homebrew
+
+- name: Download oh-my-zsh.
+  git:
+    repo: 'https://github.com/ohmyzsh/ohmyzsh.git'
+    dest: '~/.oh-my-zsh'
+
+- name: Change default shell to zsh.
+  become: yes
+  command: chsh -s /usr/bin/zsh {{ ansible_user_id }}
+
+- name: Create default .zshrc # TODO replace with symlink?
+  command: cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
+- name: Create symlink for .aliases.
+  file:     
+    src: "~/.aliases"
+    dest: "~/.oh-my-zsh/custom/zsh_aliases.zsh"
+    state: link
+
+- name: Create symlink for .zsh_config.
+  file:     
+    src: "~/.zsh_config"
+    dest: "~/.oh-my-zsh/custom/zsh_config.zsh"
+    state: link

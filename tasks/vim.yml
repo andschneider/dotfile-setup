@@ -1,0 +1,33 @@
+- name: Create folder for language specific formatting files.
+  file:
+    path: "~/.vim/ftplugin"
+    state: directory
+
+- name: Copy language specific formatting files.
+  copy: 
+    src: "{{ item }}"
+    dest: "~/.vim/ftplugin/{{ item }}"
+  with_items:
+    - c.vim
+    - python.vim
+    - tex.vim
+
+- name: Create folder for custom themes.
+  file:
+    path: "~/.vim/colors"
+    state: directory
+
+- name: Copy theme files.
+  copy: 
+    src: "{{ item }}"
+    dest: "~/.vim/colors/{{ item }}"
+  with_items:
+    - gruvbox.vim
+
+- name: Clone Vundle.
+  git:
+    repo: 'https://github.com/VundleVim/Vundle.vim.git'
+    dest: '~/.vim/bundle/Vundle.vim'
+
+- name: Install Vundle plugins.
+  command: vim +PluginInstall +qall

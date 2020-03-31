@@ -1,6 +1,0 @@
-- include: links.yml
-- include: vim.yml
-- include: tmux.yml
-- include: bash.yml
-- include: zsh.yml
-- include: git.yml
