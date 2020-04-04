@@ -2,4 +2,5 @@
 192.168.1.168
 
 [localhost]
-127.0.0.1
+andrew ansible_connection=local
+
