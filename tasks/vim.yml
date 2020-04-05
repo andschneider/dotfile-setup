@@ -9,6 +9,7 @@
     dest: "~/.vim/ftplugin/{{ item }}"
   with_items:
     - c.vim
+    - go.vim
     - python.vim
     - tex.vim
 
