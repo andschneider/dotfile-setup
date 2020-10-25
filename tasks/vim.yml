@@ -1,29 +1,14 @@
-- name: Create folder for language specific formatting files.
+- name: Symlink language specific formatting files.
   file:
-    path: "~/.vim/ftplugin"
-    state: directory
+    src: "{{ dotfiles_repo_local_destination }}/ftplugin"
+    dest: "~/.vim/ftplugin"
+    state: link
 
-- name: Copy language specific formatting files.
-  copy: 
-    src: "{{ item }}"
-    dest: "~/.vim/ftplugin/{{ item }}"
-  with_items:
-    - c.vim
-    - go.vim
-    - python.vim
-    - tex.vim
-
-- name: Create folder for custom themes.
+- name: Symlink theme files.
   file:
-    path: "~/.vim/colors"
-    state: directory
-
-- name: Copy theme files.
-  copy: 
-    src: "{{ item }}"
-    dest: "~/.vim/colors/{{ item }}"
-  with_items:
-    - gruvbox.vim
+    src: "{{ dotfiles_repo_local_destination }}/colors"
+    dest: "~/.vim/colors"
+    state: link
 
 - name: Clone Vundle.
   git:
