@@ -16,8 +16,15 @@
   become: yes
   command: chsh -s /usr/bin/zsh {{ ansible_user_id }}
 
-- name: Create default .zshrc # TODO replace with symlink?
-  command: cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+- name: Install zsh-autosuggestions plugin.
+  git:
+    repo: "https://github.com/zsh-users/zsh-autosuggestions"
+    dest: "~/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+
+- name: Install history-substring-search plugin.
+  git:
+    repo: "https://github.com/zsh-users/zsh-history-substring-search"
+    dest: "~/.oh-my-zsh/custom/plugins/zsh-history-substring-search"
 
 - name: Create symlink for .aliases.
   file:     
@@ -25,8 +32,3 @@
     dest: "~/.oh-my-zsh/custom/zsh_aliases.zsh"
     state: link
 
-- name: Create symlink for .zsh_config.
-  file:     
-    src: "~/.zsh_config"
-    dest: "~/.oh-my-zsh/custom/zsh_config.zsh"
-    state: link

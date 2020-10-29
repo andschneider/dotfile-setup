@@ -14,4 +14,4 @@ dotfiles_files:
   - .ideavimrc
   - .tmux.conf
   - .vimrc
-  - .zsh_config
+  - .zshrc
