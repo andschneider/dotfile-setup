@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: remote
   user: andrew
 
   vars_files:

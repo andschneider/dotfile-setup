@@ -1,3 +1,8 @@
+- name: Ensure ~/.vim folder is present.
+  file:
+    path: "~/.vim"
+    state: directory
+
 - name: Symlink language specific formatting files.
   file:
     src: "{{ dotfiles_repo_local_destination }}/ftplugin"
